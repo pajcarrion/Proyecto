@@ -11,9 +11,9 @@ body {
     background-color: rgb(0, 0, 0);
     display: grid;
     grid-template-areas: 
-        "div1 header header div2"  
-        "div1 main main div2"  
-        "div1 footer footer div2";
+        "header header header"  
+        "main main main"  
+        "footer footer footer";
     width: 100vh;
     height: 100%;
     font-family: "Nunito Sans", sans-serif;
@@ -126,7 +126,7 @@ main {
     background-color: rgba(53, 75, 53, 0.747);
     z-index: -100;
     position: absolute;
-    left: -50px;
+    left: -350px;
     margin-top: 100px;
     
     
@@ -139,7 +139,7 @@ main {
     background-color: rgba(53, 75, 53, 0.747);
     z-index: -100;
     position: absolute;
-    left: 1380px;
+    left: 1100px;
     margin-top: 30px;
     
     
@@ -149,14 +149,14 @@ main {
     z-index: -100;
     position: absolute;
     margin-top: 800px;
-    left: 400px; 
+    left: 180px; 
 }
 
 .imagen_taxi {
     z-index: -100;
     position: absolute;
     margin-top: 1300px;
-    left: 830px; 
+    left: 550px; 
 }
 
 .encabezado_section {
