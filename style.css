@@ -30,7 +30,7 @@ header {
     grid-area: header;
     display: flex;
     justify-content: center;
-    background-image: url(/imagenes/rolands-varsbergs-miKmVyq3qhE-unsplash-scaled-e1670302019124.webp);
+    background-image: url(./imagenes/rolands-varsbergs-miKmVyq3qhE-unsplash-scaled-e1670302019124.webp);
     background-size: cover;
     background-position-x: 30%;
     background-position-y: 100%;
