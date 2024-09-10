@@ -6,58 +6,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 body {
     background-color: rgb(0, 0, 0);
     display: grid;
     grid-template-areas: 
-        "header header header"  
-        "main main main"  
-        "footer footer footer";
-    width: 100vh;
+        "header"  
+        "main"  
+        "footer";
+    width: 1500px;
     height: 100%;
     font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
+    overflow: auto;
 }
 
 header {
     grid-area: header;
+    display: flex;
+    justify-content: center;
     background-image: url(/imagenes/rolands-varsbergs-miKmVyq3qhE-unsplash-scaled-e1670302019124.webp);
     background-size: cover;
     background-position-x: 30%;
     background-position-y: 100%;
     height: 450px;
-    width: 100vh;
+    width: 100%;
 }
 
 .contenedor_padre_header {
     background-color:rgba(10, 94, 59, 0.425);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
     height: 450px;
     width: 100%;
 }
 
+.caja_header_1 {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+}
+
 .logo_header {
-    grid-row: 1/3;
-    grid-column: 1/3;
     color:white;
     font-size: 40px;
+    width: 150px;
     font-family: "Caveat", system-ui;
     margin: 25px;
-    margin-left: 30px;
+    margin-right: 1100px;
 }
 
 .nav_header {
-    grid-row: 1/3;
-    grid-column: 1/3;
-    width: 90%;
     height: 50px;
     display: flex;
-    justify-content: right;
+    margin-top: 35px;
+    margin-right: 0px;
+    width: 100%;
     gap: 20px;
-    margin-top: 20px;
+
 }
 
 .boton_nav_header {
@@ -75,16 +87,31 @@ header {
 .caja_header_texto {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 550px;
     height: 100%;
+    margin-top: -70px;
     justify-content: center;
     align-items: center;
-    padding-left: 400px;
+}
+
+.linea_blanca {
+    width: 1120px;
+    margin: 8px;
+    display: flex;
+    justify-content: flex-end
+
+}
+
+.linea_blanca_nav {
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    width: 50px;
 }
 
 .texto_header {
     font-size: 35px;
-    color: white;  
+    color: white;
+    text-align: center;  
 }
 
 .boton_texto_header {
@@ -101,33 +128,36 @@ header {
 
 main {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     height: 2000px;
     background-color: white;
     z-index: 1000;
+    width: 100%;
 }
 
 .contenedor_main_1 {
     display: flex;
     flex-direction: column;
-    width: 100vh;
+    width: 100%;
     height: 70%;
     background-color: rgba(255, 255, 255, 0);
-
     align-items: center;
+    position: relative;
     padding-top: 50px;
     
 }
 
 .circulo {
-    width: 700px;
-    height: 700px;
-    border-radius: 400px;
     background-color: rgba(53, 75, 53, 0.747);
     z-index: -100;
     position: absolute;
-    left: -350px;
-    margin-top: 100px;
+    left: -175px;
+    margin-top: 250px;
+    width: 650px;
+    height: 300px;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(90deg);
     
     
 }
@@ -139,24 +169,10 @@ main {
     background-color: rgba(53, 75, 53, 0.747);
     z-index: -100;
     position: absolute;
-    left: 1100px;
+    left: 1250px;
     margin-top: 30px;
     
     
-}
-
-.imagen_hotel {
-    z-index: -100;
-    position: absolute;
-    margin-top: 800px;
-    left: 180px; 
-}
-
-.imagen_taxi {
-    z-index: -100;
-    position: absolute;
-    margin-top: 1300px;
-    left: 550px; 
 }
 
 .encabezado_section {
@@ -187,6 +203,8 @@ main {
 .contenedor_cards {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
 }
 
@@ -276,18 +294,34 @@ main {
 .contenedor_services {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 1000px;
 }
 
-
-
 .contenedor_card_services {
-    height: 800px;
-    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
     margin-top: 10px;
     margin-left: 10px;
 }
 
+.imagen_hotel {
+    z-index: -100;
+    position: absolute;
+    margin-top: 915px;
+    left: 170px;
+    object-fit: cover; 
+}
+
+.imagen_taxi {
+    z-index: -100;
+    position: absolute;
+    margin-top: 1400px;
+    left: 670px; 
+}
 
 .titulo_card_services {
     font-size: 30px;
@@ -300,8 +334,8 @@ main {
     padding: 20px;
     width: 500px;
     background-color: white;
-    margin-top: 8%;
-    margin-left: 700px; 
+    margin-top: 0;
+    margin-left: 400px; 
 }
 
 .caja_services_2 {
@@ -311,8 +345,8 @@ main {
     padding: 20px;
     width: 500px;
     background-color: white;
-    margin-top: 25%;
-    margin-left: 100px; 
+    margin-top: 160px;
+    margin-left: -500px; 
 }
 
 .texto2 {
@@ -341,6 +375,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
 
 h6 {
@@ -368,8 +403,9 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vh;
-    height: 200px;
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
     background-color: rgba(8,36,25,255)
 }
 
