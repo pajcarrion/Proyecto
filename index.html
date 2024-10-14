@@ -8,46 +8,135 @@
 </head>
 <body>
     <header>
-        <div class="contenedor_padre_header">
+        <div id="section_home" class="contenedor_padre_header">
             <div class="caja_header_1">
                 <div class="logo_header">TravelSite</div>
-                <div class="nav_header">
-                    <nav class="boton_nav_header">Home</nav>
-                    <nav class="boton_nav_header">Places</nav>
-                    <nav class="boton_nav_header">Services</nav>
-                </div>
+                <nav class="nav_header">
+                    <button class="boton_nav_header">Home</button>
+                    <button onclick="scrollHasta('section_places')" class="boton_nav_header">Places</button>
+                    <button onclick="scrollHasta('section_services')" class="boton_nav_header">Services</button>
+                </nav>
             </div>
-        <div class="linea_blanca"><div class="linea_blanca_nav"></div></div>
             <div class="caja_header_texto">
                 <p class="texto_header">
                     Our destination is never a place, but a new way of seeing things
                 </p>
-                <button class="boton_texto_header"> Register Now</button>
+                <button id="boton_registro" class="boton_texto_header"> Register Now</button>
             </div>     
         </div>    
     </header>
-    
     <main>
+        <div id="register" class="popup">  
+            <div id="contenido_popup_registro">
+                <span class="cerrar">&times;</span>
+                <div>
+                    <form id="formulario_registro">
+                        <h3>Create Account</h3>
+                        <label>Username</label>
+                        <input type="text" required>
+                        
+                        <label>Email</label>
+                        <input type="email" required>
+                        
+                        <label>Password</label>
+                        <input type="password" required>
+                        
+                        <button  class="boton_learn_more" type="submit">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="login" class="popup">  
+            <div id="contenido_popup_login">
+                <span class="cerrar">&times;</span>
+                <div>
+                    <form id="formulario_login">
+                        <label>Email</label>
+                        <input type="email" required>
+                        
+                        <label>Password</label>
+                        <input type="password" required>
+                        
+                        <button  class="boton_learn_more" type="submit">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="popUp1" class="popup">
+            <div class="contenido_popup">
+                <span class="cerrar">&times;</span>
+                <div class="contenido_real_popup"> <img class="img_popup" src="./imagenes/cristo.jpg" alt="cristo">
+                    <div class="texto_card"><h2>Brazil</h2>
+                    <p>Brazil is a dazzling gem for tourists, offering a kaleidoscope of experiences. Picture yourself at Rio de Janeiro's Carnival, a riot of color and music. Explore the dense Amazon rainforest, teeming with exotic wildlife, or relax on the pristine beaches of Copacabana and Ipanema. Brazil's historic cities, like Salvador with its Afro-Brazilian culture, are rich in heritage. And don’t forget the delectable Brazilian cuisine, from feijoada to caipirinhas. Each visit promises adventure, beauty, and unforgettable memories. 🌴🦜🌞
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popUp2" class="popup">
+            <div class="contenido_popup">
+                <span class="cerrar">&times;</span>
+                <div class="contenido_real_popup"> <img class="img_popup" src="./imagenes/portugal2.jpg" alt="umbrella">
+                    <div class="texto_card"><h2>Portugal</h2>
+                    <p>Portugal, a treasure trove for travelers, boasts a rich tapestry of experiences. Wander the charming streets of Lisbon, with its historic trams and vibrant nightlife. Explore the lush landscapes of the Douro Valley, famous for its wine. Bask on the stunning beaches of the Algarve or discover the cultural gems in Porto. Portuguese cuisine, with its delectable pastéis de nata and bacalhau, tantalizes the taste buds. Every visit to Portugal promises a blend of heritage, beauty, and unforgettable memories.🍷🏖️
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popUp3" class="popup">
+            <div class="contenido_popup">
+                <span class="cerrar">&times;</span>
+                <div class="contenido_real_popup"> <img class="img_popup" src="./imagenes/mexico2.jpg" alt="mexico">
+                    <div class="texto_card"><h2>México</h2>
+                    <p>Mexico, a vibrant paradise, enchants tourists with its rich history and diverse landscapes. From the ancient ruins of Chichen Itza to the bustling streets of Mexico City, there's a blend of old and new. Marvel at the turquoise waters of Cancun's beaches or explore the colonial charm of San Miguel de Allende. The culinary delights, from tacos to mole, captivate the palate. Each visit to Mexico promises a fiesta of culture, beauty, and unforgettable adventures. 🌮🏝️🎉
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popUpAcco" class="popup">
+            <div class="contenido_popup">
+                <span class="cerrar">&times;</span>
+                <div class="contenido_real_popup"> <img class="img_popup" src="./imagenes/hotel2.jpg" alt="hotel2">
+                    <div class="texto_card"><h2>Accommodation</h2>
+                    <p>This company excels at finding the world's best hotels and accommodations. From luxurious resorts in the Maldives to charming bed and breakfasts in Tuscany, their curated selections ensure unmatched comfort and elegance. Whether you're seeking a romantic getaway, a family vacation, or a business trip, they provide top-tier options tailored to your needs. With a focus on quality, location, and exceptional service, every stay booked through them promises an unforgettable experience, making your travels truly exceptional. 🌍🏨✈️
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popUpTrans" class="popup">
+            <div class="contenido_popup">
+                <span class="cerrar">&times;</span>
+                <div class="contenido_real_popup"> <img class="img_popup" src="./imagenes/taxi2.jpg" alt="hotel2">
+                    <div class="texto_card"><h2>Transport</h2>
+                    <p>Offering unparalleled transportation services, they cater to all your travel needs. Whether it's a luxurious limousine for a special occasion, a reliable airport transfer, or a scenic city tour, their fleet covers it all. Meticulously maintained vehicles and professional drivers ensure a seamless, comfortable journey. From private cars to group shuttles, they provide tailored options to suit any requirement. With a commitment to punctuality, safety, and customer satisfaction, every ride is designed to enhance your travel experience, making your journey as memorable as your destination. 🚖🌟🚀
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section class="contenedor_main_1">
             <div class="circulo"></div>
             <div class="circulo2"></div>
             <div class="imagen_hotel"> <img src="./imagenes/hotel.png" width="650px" height="400px" alt="hotel"></div>
             <div class="imagen_taxi"> <img src="./imagenes/taxi.png" width="650px" height="400px" alt="taxi"></div>
             <div class="texto2">
-                <p class="encabezado_section">Visit Fantastic Places</p>
+                <p id="section_places" class="encabezado_section">Visit Fantastic Places</p>
             </div>
             <div class="linea_verde"></div>
             <div class="texto_places">
-                <p class="places_texto"> Places |</p>
-                <p class="favorites_texto">Favorites</p>
+                <button id="boton_places" class="places_texto"> Places |</button>
+                <button id="boton_favorites" class="favorites_texto">Favorites</button>
             </div>
-            <div class="contenedor_cards">
+            <div id="contenedor_card" class="contenedor_cards">
                 <div class="card"> <img class="img_card" src="./imagenes/brasil.jpeg" alt="brasil">
                     <div class="texto_card"><h6>Brazil</h6>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus, doloribus ea sit quam sed, natus minima reprehenderit distinctio, quis enim? Hic minus ipsam dicta ut earum.
                     </p>
                         <div class="caja_botones_card">
-                            <button class="boton_card_1">Visit place</button>
+                            <button id="boton_visit" class="boton_card_1">Visit place</button>
                             <button class="boton_card_2">Add to Favorites</button>
                         </div>
                     </div>
@@ -57,7 +146,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus, doloribus ea sit quam sed, natus minima reprehenderit distinctio, quis enim? Hic minus ipsam dicta ut earum.
                     </p>
                         <div class="caja_botones_card">
-                            <button class="boton_card_1">Visit place</button>
+                            <button id="boton_visit2" class="boton_card_1">Visit place</button>
                             <button class="boton_card_2">Add to Favorites</button>
                         </div>
                     </div>
@@ -67,7 +156,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus, doloribus ea sit quam sed, natus minima reprehenderit distinctio, quis enim? Hic minus ipsam dicta ut earum.
                         </p>
                             <div class="caja_botones_card">
-                                <button class="boton_card_1">Visit place</button>
+                                <button id="boton_visit3" class="boton_card_1">Visit place</button>
                                 <button class="boton_card_2">Add to Favorites</button>
                             </div>
                         </div>
@@ -79,14 +168,14 @@
                 <div class="linea_verde2"></div>
             </div>
         </section>
-        <section class="contenedor_card_services">
+        <section id="section_services" class="contenedor_card_services">
             <div class="caja_services_1">
                 <div class="card_accommodation">
                     <p class="titulo_card_services">Accommodation</p>
                     <p class="accommodation_parrafo">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptas asperiores saepe debitis maiores molestiae consectetur nemo hic dignissimos quis inventore consequatur modi, et suscipit autem quo sunt assumenda corrupti.
                     </p>
-                    <button class="boton_learn_more">Learn More</button>
+                    <button id="boton_learnAcco" class="boton_learn_more">Learn More</button>
                 </div>
             </div>
                 <div class="caja_services_2">
@@ -94,23 +183,24 @@
                     <p class="accommodation_parrafo">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptas asperiores saepe debitis maiores molestiae consectetur nemo hic dignissimos quis inventore consequatur modi, et suscipit autem quo sunt assumenda corrupti.
                     </p>
-                    <button class="boton_learn_more">Learn More</button>
+                    <button id="boton_learnTrans" class="boton_learn_more">Learn More</button>
                     
                 </div>
                     
             </section>
     </main>
     <footer>
-        <div class="nav_footer">
-            <nav class="texto_footer">Home</nav>
-            <nav class="texto_footer">Places</nav>
-            <nav class="texto_footer">Contact</nav>
-            <nav class="texto_footer">Login</nav>
-            <nav class="texto_footer">Register</nav>
-        </div>
+        <nav class="nav_footer">
+            <button onclick="scrollHasta('section_home')" class="boton_nav_header">Home</button>
+            <button onclick="scrollHasta('section_places')" class="boton_nav_header">Places</button>
+            <button class="boton_nav_header">Contact</button>
+            <button id="boton_login" class="boton_nav_header">Login</button>
+            <button onclick="scrollHasta('section_home')" class="boton_nav_header">Register</button>
+        </nav>
         <p class="rights_text">
             All rights reserved.
         </p>
     </footer>
+    <script src="/index.js"></script>
 </body>
 </html>
