@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        */ {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cadetblue;
+        } 
+        h1 {
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+        }
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            height: 1000px;
+        
+        }
+        #mostrar_tareas {
+            display: flex;
+            border: 5px solid black;
+            flex-direction: column;
+            border-radius: 10px;
+            height: 1000px;
+            width: 700px;
+            background-color: antiquewhite;
+        }
+
+        p {
+            font-size: 30px;
+        }
+    </style>
+    <title>Ver Tareas</title>
+</head>
+<body>
+    
+    <div class="contenedor">
+        <h1>Lista de Tareas</h1>
+        <div id="mostrar_tareas"></div>
+    </div>
+    
+
+    </div>
+    <script>
+        // Traer las tareas de LocalStorage y convertirlas de nuevo en objeto. Si lo que trae es null, queda vacío
+        const storage_task = JSON.parse(localStorage.getItem('tasks') || [])
+
+        //Seleccionar contenedor para mostrar tareas
+        const task_container = document.querySelector('#mostrar_tareas');
+
+        //Mostrar tareas iterando con foreach
+        storage_task.forEach(task => {
+            const task_element = document.createElement('p');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+        //crear contenedor que tendrá la tarea acompañado de un checkbox
+            const container_task = document.createElement('div')
+            container_task.style.display = 'flex';
+            container_task.style.display = 'column';
+
+        // Adjuntar datos a contenedores
+            task_element.textContent = `Tarea: ${task.task}, Fecha y Hora: ${task.date || 'Sin especificar'}`;
+            container_task.appendChild(task_element);
+            container_task.appendChild(checkbox);
+            task_container.appendChild(container_task);
+
+        });
+
+    </script>
+</body>
+</html>

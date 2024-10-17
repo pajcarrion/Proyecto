@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        */ {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cadetblue;
+        }
+
+        .agregar_tareas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            background-color: aliceblue;
+            border-radius: 10px;
+            width: 400px;
+            height: 300px;
+            box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.322);
+        }
+
+        #form_tasks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        #input_date {
+            margin-bottom: 3px;
+        }
+
+        #opcional {
+            font-size: 12px;
+        }
+
+        button {
+            margin-top: 20px;
+            height: 50px;
+            width: 182px;
+            border-radius: 10px;
+        }
+    </style>
+    <title>Agregar tareas</title>
+</head>
+<body>
+    <section>
+        <div class="agregar_tareas">
+            <form id="form_tasks">
+                <label>Ingresa Tarea</label>
+                <input id="input_task" type="text"  placeholder="Ingresa aquí la tarea" required>
+                <label>Ingresa Fecha y Hora</label>
+                <input id="input_date" type="datetime-local">
+                <label id="opcional"> (opcional)</label>
+                <button id="save_task"> Guardar</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        // Traer Inputs
+        const task_input = document.querySelector('#input_task');
+        const date_input = document.querySelector('#input_date');
+
+        //Trae botón de guardado
+        const button_save = document.querySelector('#save_task');
+
+        //Almacenar Tareas:
+        const tasks = [];
+
+        //Evento para almacenar tareas:
+        button_save.addEventListener('click', function almacenar_tareas(){
+            const task = task_input.value;
+            const date = date_input.value;
+            alert("Tu tarea ha sido almacenada");
+        
+        //Crear objeto donde irán los valores
+            const task_object = {task, date};
+
+        //Enviar valores al arreglo
+        tasks.push(task_object);
+        
+        //Guardar en LocalStorage
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
+        //Limpiar Inputs
+        task_input.value ='';
+        date_input.value ='';
+    })
+</script>
+</body>
+</html>
